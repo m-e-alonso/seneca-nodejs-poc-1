@@ -1,0 +1,3 @@
+# Ignore the ./data folder which serves as a development Mongo repository
+
+/data/

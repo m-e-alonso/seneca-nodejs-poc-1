@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+    mongo:
+        build:
+            context: ./data-store
+            dockerfile: Dockerfile        
+    web-ui-api:
+        build: 
+            context: .
+            dockerfile: ./web-ui-api/Dockerfile        
+    web-server:
+        build: 
+            context: ./web-ui
+            dockerfile: Dockerfile
+        ports: 
+            - "5000:80"
+    

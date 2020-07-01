@@ -1,0 +1,17 @@
+{
+  "name": "web-ui-api",
+  "version": "1.0.0",
+  "description": "Web UI API server-side component for billing system spike",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Alonso",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "domain-shared": "file:../domain-shared",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  }
+}

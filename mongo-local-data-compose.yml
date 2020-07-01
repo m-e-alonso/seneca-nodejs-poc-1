@@ -1,0 +1,8 @@
+version: '3.8'
+services:    
+    mongoLocalData:
+        image: mongo
+        volumes:
+            - ./data:/data/db
+        ports:
+            - "28000:27017"

@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ul.main-menu {
+  display: block;  
+  background: darkgray;
+}
+
+ul.main-menu li
+{  
+  display: inline-block;  
+}
+
+ul.main-menu li a 
+{
+  display: block;
+  padding: 15px;
+  color:white;
+  text-decoration:none;
+}
+
+ul.main-menu li a.active {
+  color: yellow;
+} 
+
+ul.main-menu li a:hover {
+  background-color: lightgray;
+}
+
+div.filters {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+div.filters select {
+  min-width: 200px;
+}
+
+div.services table th {
+  text-align: left;
+
+}
+
+div.loading {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+div.loading div.background {
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  opacity: 0.5;
+  background-color: black;
+}
+
+div.loading div.message {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -20px;
+
+  color:white;
+}
+
+
