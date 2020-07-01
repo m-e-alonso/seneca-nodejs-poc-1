@@ -1,2 +1,7 @@
 data/
 kube/
+**/node_modules
+**/build
+**/Dockerfile
+**/README.md
+**/.gitignore
