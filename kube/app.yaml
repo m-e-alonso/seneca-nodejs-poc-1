@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: mongo-deployment
+    labels:
+        app: mongo
+spec:
+    replicas: 1
+    selector: 
+        matchLabels:
+            app: mongo
+    template:
+        metadata:
+            labels:
+                app: mongo
+        spec:
+            containers:
+            - name: mongo
+              image: mealonso/seneca-nodejs-billing-spike:data-store
+              ports:
+                - containerPort: 27017
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: web-ui-api-deployment
+    labels:
+        app: web-ui-api
+spec:
+    replicas: 1
+    selector: 
+        matchLabels:
+            app: web-ui-api
+    template:
+        metadata:
+            labels:
+                app: web-ui-api
+        spec:
+            containers:
+            - name: web-ui-api
+              image: mealonso/seneca-nodejs-billing-spike:web-ui-api
+              ports:
+                - containerPort: 8080
+---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+        name: web-server-deployment
+        labels:
+            app: web-server
+    spec:
+        replicas: 1
+        selector: 
+            matchLabels:
+                app: web-server
+        template:
+            metadata:
+                labels:
+                    app: web-server
+            spec:
+                containers:
+                - name: web-server
+                  image: mealonso/seneca-nodejs-billing-spike:web-server
+                  ports:
+                  - containerPort: 3000
+

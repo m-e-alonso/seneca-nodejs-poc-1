@@ -1,4 +1,4 @@
-FROM node
+FROM node as build-stage
 
 WORKDIR /app/web-ui
 
@@ -15,10 +15,14 @@ WORKDIR /app/domain-shared
 
 COPY ./domain-shared/. .
 
-EXPOSE 3000
-
 WORKDIR /app/web-ui
 
-CMD ["npm", "start"]
+RUN npm run build
+
+FROM nginx
+
+COPY --from=build-stage /app/web-ui/build/ /usr/share/nginx/html
+
+COPY ./web-ui/nginx.conf /etc/nginx/conf.d/default.conf
 
 
